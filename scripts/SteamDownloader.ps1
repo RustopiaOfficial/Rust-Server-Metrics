@@ -41,7 +41,7 @@ if (!(Test-Path $tools_dir)) {
 
 # Set URLs of dependencies and tools to download
 # $steam_depotdl_url = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.7/depotdownloader-2.4.7.zip"
-$steam_depotdl_url = "https://cdn.vgn.gg/vitalrustcom-static/DepotDownloader.zip"
+$steam_depotdl_url = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.7.4/DepotDownloader-windows-x64.zip"
 
 function Get-Downloader {
     # Check if DepotDownloader is already downloaded
