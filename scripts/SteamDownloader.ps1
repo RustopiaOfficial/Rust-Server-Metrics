@@ -45,7 +45,7 @@ $steam_depotdl_url = "https://github.com/SteamRE/DepotDownloader/releases/downlo
 
 function Get-Downloader {
     # Check if DepotDownloader is already downloaded
-    $steam_depotdl_dll = Join-Path $tools_dir "DepotDownloader.dll"
+    $steam_depotdl_dll = Join-Path $tools_dir "DepotDownloader.exe"
     $steam_depotdl_zip = Join-Path $tools_dir "DepotDownloader.zip"
     if (!(Test-Path $steam_depotdl_dll) -or (Get-Item $steam_depotdl_dll).LastWriteTime -lt (Get-Date).AddDays(-7)) {
         # Download and extract DepotDownloader
@@ -90,7 +90,7 @@ function Get-Dependencies {
     try {
         $depoArgsList = "`"$steam_depotdl_dll`" $steam_access -app $steam_appid -branch $steam_branch $steam_depot -os $platform -dir `"$platform_dir`" -filelist `"$fileListPath`""
         Write-Host $depoArgsList
-        Start-Process dotnet -WorkingDirectory "$tools_dir" -ArgumentList $depoArgsList -NoNewWindow -Wait
+        Start-Process "$steam_depotdl_dll" -WorkingDirectory "$tools_dir" -ArgumentList $depoArgsList -NoNewWindow -Wait
     }
     catch {
         Write-Host "Error: Could not start or complete getting dependencies"
