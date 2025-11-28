@@ -327,13 +327,17 @@ namespace RustServerMetrics
             var epochNow = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString();
 
             _stringBuilder.Clear();
+            var isLagging = (current.frameRate < 10 || current.frameTime > 100) ? 1 : 0;
+
             _stringBuilder.Append("framerate,server=");
             _stringBuilder.Append(Configuration.serverTag);
             _stringBuilder.Append(" instant=");
             _stringBuilder.Append(current.frameRate);
             _stringBuilder.Append(",average=");
             _stringBuilder.Append(current.frameRateAverage);
-            _stringBuilder.Append(" ");
+            _stringBuilder.Append(",is_lagging=");
+            _stringBuilder.Append(isLagging);
+            _stringBuilder.Append("i ");
             _stringBuilder.Append(epochNow);
             _stringBuilder.Append("\n");
 
