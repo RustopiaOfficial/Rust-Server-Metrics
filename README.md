@@ -1,4 +1,4 @@
-# THIS REPOSITORY HAS BEEN DISCONTINUED, SEE RECCOMENDED FORK BELOW
+# THIS REPOSITORY HAS BEEN DISCONTINUED, SEE RECOMENDED FORK BELOW
 Jexs from RustyMoose has volunteered to continue developing and supporting this OSS, see their repository here: [https://github.com/RustyMoose/RustServerMetrics](https://github.com/RustyMoose/Rust.ServerMetrics)
 
 # Rust Server Metrics
